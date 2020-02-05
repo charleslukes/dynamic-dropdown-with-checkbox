@@ -1,0 +1,38 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div>
+  <div>
+    <div style="margin-bottom: 20px">
+      <input type="text" name="text" id="text" />
+    </div>
+    <div style="margin-bottom: 10px">
+      <span>
+        <input
+          type="checkbox"
+          name="checkbox1"
+          id="checkbox1"
+          (change)="onSelectAll()"
+        />
+      </span>
+      <span>
+        select all
+      </span>
+    </div>
+    <div
+      style="display: flex; align-items: center; justify-content: center"
+      *ngFor="let value of displayCheckItems; let i = index"
+    >
+      <span>
+        <input
+          type="checkbox"
+          name="checkbox1"
+          id="checkbox1"
+          [checked]="value.checked"
+          (change)="searchForCheckItem(i, $event)"
+        />
+      </span>
+      <span>
+        {{value.value}}
+      </span>
+    </div>
+  </div>
+</div>
